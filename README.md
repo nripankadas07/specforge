@@ -4,6 +4,10 @@ SpecForge is a local-first workflow studio for turning open-source trend evidenc
 
 It was designed as a GitHub-profile piece: polished enough to demo, technical enough to inspect, and grounded in current high-star project patterns instead of generic app ideas.
 
+**Live demo:** https://nripankadas07.github.io/specforge/
+
+![SpecForge dashboard showing repository trend radar, ship score, and workflow controls](docs/assets/specforge-dashboard.jpg)
+
 ## Why This Exists
 
 The highest-signal repositories I verified on 2026-06-13 cluster around four durable ideas:
