@@ -8,6 +8,16 @@ It was designed as a GitHub-profile piece: polished enough to demo, technical en
 
 ![SpecForge dashboard showing repository trend radar, ship score, and workflow controls](docs/assets/specforge-dashboard.jpg)
 
+## Best Reasons To Star
+
+Star SpecForge if you want a compact, inspectable example of:
+
+- turning OSS trend evidence into product direction without runtime scraping;
+- ranking project inspirations with a transparent scoring model;
+- simulating a guarded spec-first workflow before building;
+- exporting a README-ready blueprint from product and engineering signals;
+- building a polished React/TypeScript portfolio project with tests and CI.
+
 ## Why This Exists
 
 The highest-signal repositories I verified on 2026-06-13 cluster around four durable ideas:
@@ -28,6 +38,16 @@ SpecForge combines those ideas into a runnable product: pick high-signal inspira
 - Exportable Markdown blueprint for project planning or README drafts.
 - Pure TypeScript scoring and workflow modules covered by Vitest tests.
 - Responsive dashboard UI with real repository avatars and no API key requirement.
+
+## What To Inspect First
+
+| Layer | File | Why It Matters |
+|---|---|---|
+| Evidence dataset | [src/data/repositories.ts](src/data/repositories.ts) | Fixed, source-linked project signals keep demos stable and reviewable. |
+| Scoring model | [src/lib/scoring.ts](src/lib/scoring.ts) | Converts stars, technical depth, demo appeal, feasibility, moat, and risk into a portfolio score. |
+| Workflow engine | [src/lib/workflow.ts](src/lib/workflow.ts) | Generates deterministic workflow nodes, events, risks, confidence, and ship score. |
+| Blueprint export | [src/lib/exporters.ts](src/lib/exporters.ts) | Produces a Markdown project plan from the selected evidence and workflow. |
+| Product shell | [src/App.tsx](src/App.tsx) | Wires the dashboard, selectors, graph, event timeline, and export flow. |
 
 ## Tech Stack
 
@@ -79,6 +99,21 @@ Read more in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 - Hacker News composable agent discussion: https://news.ycombinator.com/item?id=47350516
 
 Details are in [docs/RESEARCH.md](docs/RESEARCH.md).
+
+## Community And Roadmap
+
+Discussions are open for scoring ideas, workflow suggestions, and project
+planning use cases: https://github.com/nripankadas07/specforge/discussions
+
+High-value next improvements:
+
+- add scoring profiles for backend, AI, data, and frontend portfolios;
+- add a CLI exporter for generating blueprints from a checked-in config;
+- add an optional live GitHub fetcher with cached fallback data;
+- add repeatable screenshot and demo-video generation;
+- publish example blueprints for real portfolio projects.
+
+The public launch kit is in [docs/LAUNCH_KIT.md](docs/LAUNCH_KIT.md).
 
 ## Project Standard
 
