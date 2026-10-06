@@ -21,7 +21,8 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "pretest": "node --test dependency-audit.cjs"
   },
   "dependencies": {
     "lucide-react": "^1.18.0",
