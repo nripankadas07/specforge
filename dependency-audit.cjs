@@ -13,3 +13,21 @@ test('section offsets above the supported bound are rejected', () => {
   const {SourceMapConsumer} = require('source-map-js');
   assert.throws(() => new SourceMapConsumer({version:3,sections:[{offset:{line:10000001,column:0},map:{version:3,sources:[],names:[],mappings:''}}]}), /Section offset line must not exceed 10000000/);
 });
+
+test('manual mock URLs remain literal data in generated JavaScript (GHSA-qxg6-89mg-rqv8)', async () => {
+  const { createManualModuleSource } = await import('@vitest/mocker/node');
+  const url = 'x"); globalThis.__specforgeMockCanary = 1; void("';
+  let received;
+  globalThis.__specforgeMockFactory = { getFactoryModule(value) { received = value; return { answer: 42 }; } };
+  try {
+    const source = createManualModuleSource(url, ['answer'], '"__specforgeMockFactory"');
+    const module = await import('data:text/javascript,' + encodeURIComponent(source));
+    assert.equal(received, url);
+    assert.equal(module.answer, 42);
+    assert.equal(globalThis.__specforgeMockCanary, undefined);
+  } finally {
+    delete globalThis.__specforgeMockFactory;
+    delete globalThis.__specforgeMockCanary;
+  }
+});
+
